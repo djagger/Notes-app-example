@@ -1,0 +1,102 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Notes App</title>
+  <link href="css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript" src="libs/jquery.min.js"></script>
+  <script type="text/javascript" src="libs/underscore.min.js"></script>
+  <script type="text/javascript" src="libs/backbone.min.js"></script>
+  <!-- router -->
+  <script type="text/javascript" src="js/note_router.js"></script>
+  <!-- models -->
+  <script type="text/javascript" src="js/note_model.js"></script>
+  <!-- views -->
+  <script type="text/javascript" src="js/note_index.js"></script>
+  <script type="text/javascript" src="js/note_row.js"></script>
+  <script type="text/javascript" src="js/note_new.js"></script>
+  <script type="text/javascript" src="js/note_edit.js"></script>
+  <script type="text/javascript" src="js/note_show.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>notes</h1>
+    </div>
+
+    <div class="row">
+      <div class="span6" id="primary-content">
+      </div>
+    </div>
+
+  </div>
+  <!-- форма для создания, редактирования -->
+  <script type="text/jst" id="formTemplate">
+    <div class="well">
+      <form>
+        <h2 class="form-signin-heading"></h2>
+        <input type="text" name="title" placeholder="Title" value="<%= title %>" />
+        <input type="text" name="author" placeholder="Author" value="<%= author %>" />
+        <textarea class="input-block-level" rows="5" name="description" placeholder="Description"><%= description %></textarea>
+        <div class="form-actions">
+          <button class="save btn btn-large btn-info" type="submit">Save</button> or
+          <a href="#notes/index" class="btn btn-large">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </script>
+  <!-- форма начальной страницы -->
+  <script type="text/template" id="indexTemplate">
+    <div class="well">
+      <a class="btn btn-block btn-large btn-info" href="#note/new">New Note</a>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th width="20%">Title</th>
+          <th width="20%">Author</th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </script>
+  <!-- шаблон для каждой записи в index -->
+  <script type="text/template" id="rowTemplate">
+    <td>
+      <a href="#note/<%= id %>/view"><%= title %></a>
+    </td>
+    <td><%= author %></td>
+    <td><% print(description.substring(0, 100)) %>...</td>
+    <td>
+      <a href="#" class="delete btn btn-danger btn-small">delete</a>
+    </td>
+  </script>
+  <!-- форма с готовым шаблоном -->
+  <script type="text/template" id="showTemplate">
+    <div class="well">
+      <a class="btn btn-large" href="#notes/index">
+        Back To Index
+      </a>
+      <a class="btn btn-large btn-info" href="#note/<%= id %>/edit">
+        Edit Note
+      </a>
+    </div>
+    <h2>
+      <%= title %>
+      <small>by: <%= author %></small>
+    </h2>
+    <p style="white-space:pre-wrap;"><%= description %></p>
+  </script>
+
+  <script type="text/javascript">
+    var notes = new APP.Collections.NoteCollection();
+    var router = new APP.Routers.NoteRouter({notes: notes});
+
+    Backbone.history.start();
+  </script>
+</body>
+</html>
