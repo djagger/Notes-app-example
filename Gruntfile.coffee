@@ -19,6 +19,8 @@ module.exports = (grunt) ->
 			coffee:
 				files: "src/**/*.coffee"
 				tasks: "coffee"
+				options: 
+					livereload: true
 
 	# Подключаем плагины
 	grunt.loadNpmTasks "grunt-contrib-coffee"
