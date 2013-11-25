@@ -1,3 +1,4 @@
+#test
 (->
   window.APP = window.APP or {Routers: {}, Collections: {}, Models: {}, Views: {}}
 

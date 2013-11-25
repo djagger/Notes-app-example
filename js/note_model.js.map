@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "note_model.js",
+  "sourceRoot": "../src/",
+  "sources": [
+    "note_model.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;CAAA,CAAA,CAAC,MAAA;CACC,GAAA,QAAA;CAAA,EAGG,CAAH,CAAqC,CAA3B,EAAqB,CAA/B;CACC,CACE,IADF,EAAA;CACE,CAAO,GAAP,GAAA;CAAA,CACa,MAAb,GAAA;CADA,CAEQ,IAAR,EAAA;QAHF;CAJD,KAGuB;CAQnB,EAAD,GAA8B,EAAQ,EAAW,CAApD,GAAA;CACC,CAAO,CAAG,EAAV,CAAA,GAAA;CAbF,KAYkC;CAZnC,EAAC;CAAD"
+}
