@@ -1,0 +1,16 @@
+{
+  "name": "bower-bootstrap-css",
+  "main": "./bootstrap.min.css",
+  "dependencies": {},
+  "homepage": "https://github.com/ch1c0t/bower-bootstrap-css",
+  "_release": "bead71497f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "bead71497fe6f14b26611871c08deee48570ceb6"
+  },
+  "_source": "git://github.com/ch1c0t/bower-bootstrap-css.git",
+  "_target": "*",
+  "_originalSource": "bower-bootstrap-css",
+  "_direct": true
+}
